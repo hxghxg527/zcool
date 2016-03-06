@@ -266,11 +266,55 @@ a {
     padding-top: 25px;
 }
 
-.carousel-container {
+.content-container .carousel-container {
     height: 350px;
 }
 
-.carousel-container .carousel-item-container {
+.content-container .carousel-container .carousel-item-container {
     background: url("../images/carousel1.jpg") no-repeat center;
     height: 100%;
+}
+
+.content-container .news-container {
+    height: 46px;
+    line-height: 46px;
+    padding: 0 20px;
+}
+
+.content-container .news-container > span:first-child {
+    background: url("../images/extension/voice.jpg") no-repeat left center;
+    height: 100%;
+    width: 16px;
+    margin-right: 6px;
+}
+
+.content-container .news-container span {
+    font-size: 14px;
+}
+
+.content-container .news-container span .has-color {
+    color: #4095ce;
+}
+
+.content-container .news-container > span.up, .content-container .news-container > span.down {
+    width: 31px;
+    height: 26px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.content-container .news-container > span.up {
+    background: url("../images/extension/nano.gif") no-repeat left top;
+}
+
+.content-container .news-container > span.down {
+    background: url("../images/extension/nano.gif") no-repeat right top;
+    margin-left: -1px;
+}
+
+.content-container .news-container > span.up:hover {
+    background-position-y: -26px;
+}
+.content-container .news-container > span.down:hover {
+    background-position-y: -26px;
 }
