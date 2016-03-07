@@ -270,6 +270,27 @@ a {
 
 .content-container .carousel-container {
     height: 350px;
+    position: relative;
+}
+
+.content-container .carousel-container .slide_left, .content-container .carousel-container .slide_right {
+    width: 21px;
+    height: 28px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    margin-top: -14px;
+}
+
+.content-container .carousel-container .slide_left {
+    background-image: url("../images/carousel/sl.png");
+    left: -40px;
+}
+
+.content-container .carousel-container .slide_right {
+    background-image: url("../images/carousel/sr.png");
+    right: -40px;
 }
 
 .content-container .carousel-container .carousel-item-container {
