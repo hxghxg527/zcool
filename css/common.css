@@ -384,11 +384,99 @@ a {
     padding: 9px 0;
     border-right: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
+    height: 366px;
 }
 
-.content-container .original-container .item > img {
+.content-container .original-container .item .img-link {
+    display: inline-block;
+}
+
+.content-container .original-container .item .img-link img {
     width: 250px;
     height: 188px;
+    display: block;
+}
+
+.content-container .original-container .item .content {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.content-container .original-container .item .title {
+    width: 225px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-container .original-container .item .title .title-link {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.content-container .original-container .item .title .title-link:hover {
+    color: #f30;
+    text-decoration: underline;
+}
+
+.content-container .original-container .item .type {
+    margin-top: 10px;
+}
+
+.content-container .original-container .item .type .type1 {
+    color: #ff0084;
+    font-weight: bold;
+}
+
+.content-container .original-container .item .type .type1:hover {
+    text-decoration: underline;
+}
+
+.content-container .original-container .item .type .type2 {
+    color: #7f7f7f;
+}
+
+.content-container .original-container .item .type .type2:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.content-container .original-container .item .time {
+    margin-top: 10px;
+    color: #808080;
+}
+
+.content-container .original-container .item .data {
+    margin-top: 10px;
+    color: #808080;
+}
+
+.content-container .original-container .item .data .num {
+    color: #f30;
+}
+
+.content-container .original-container .item .user {
+    margin-top: 20px;
+}
+
+.content-container .original-container .item .user .user-img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    display: block;
+}
+
+.content-container .original-container .item .user .user-name {
+    height: 30px;
+    line-height: 30px;
+    color: #808080;
+}
+
+.content-container .original-container .item .user .user-name:hover {
+    text-decoration: underline;
+    color: #000;
 }
 
 .content-container .original-title-container {
