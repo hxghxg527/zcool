@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: #f4f4f4;
 }
 
 ul {
@@ -263,7 +264,8 @@ a {
 .content-container {
     width: 1024px;
     margin: auto;
-    padding-top: 25px;
+    margin-top: 25px;
+    background-color: #fff;
 }
 
 .content-container .carousel-container {
@@ -271,7 +273,7 @@ a {
 }
 
 .content-container .carousel-container .carousel-item-container {
-    background: url("../images/carousel1.jpg") no-repeat center;
+    background: url("../images/carousel/9e0a56dce903000001521ca743da.jpg") no-repeat center;
     height: 100%;
 }
 
@@ -292,8 +294,16 @@ a {
     font-size: 14px;
 }
 
+.content-container .news-container .title {
+    margin-right: 5px;
+}
+
 .content-container .news-container span .has-color {
     color: #4095ce;
+}
+
+.content-container .news-container span .has-color:hover {
+    text-decoration: underline;
 }
 
 .content-container .news-container > span.up, .content-container .news-container > span.down {
@@ -301,6 +311,7 @@ a {
     height: 26px;
     margin-top: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .content-container .news-container > span.up {
@@ -312,9 +323,7 @@ a {
     margin-left: -1px;
 }
 
-.content-container .news-container > span.up:hover {
+.content-container .news-container > span.up:hover, .content-container .news-container > span.down:hover {
     background-position-y: -26px;
-}
-.content-container .news-container > span.down:hover {
-    background-position-y: -26px;
+    z-index: 2;
 }
