@@ -220,6 +220,7 @@ a {
     width: 100%;
     display: none;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+    z-index: 100;
 }
 
 .header-container .search-inner-container .search-condition-container .search-condition-inner-container {
