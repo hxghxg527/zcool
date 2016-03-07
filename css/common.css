@@ -356,7 +356,7 @@ a {
 }
 
 .content-container .extension-container .extension-inner-container {
-    margin-left: -1px;
+    margin-right: -1px;
 }
 
 .content-container .extension-container .item {
@@ -364,7 +364,7 @@ a {
     text-align: center;
     box-sizing: border-box;
     padding: 9px 0;
-    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
 }
 
@@ -374,7 +374,7 @@ a {
 }
 
 .content-container .original-container .original-inner-container {
-    margin-left: -1px;
+    margin-right: -1px;
 }
 
 .content-container .original-container .item {
@@ -382,7 +382,7 @@ a {
     text-align: center;
     box-sizing: border-box;
     padding: 9px 0;
-    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
 }
 
