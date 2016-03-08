@@ -626,3 +626,64 @@ a {
 .content-container .pagination-container .pagination-inner-container .item.go-btn {
     margin: 0 2px;
 }
+
+.content-container .ad-container img {
+    display: block;
+}
+
+.content-container .detail-container {
+    height: 475px;
+    overflow: hidden;
+}
+
+.content-container .detail-container .detail-inner-container {
+    margin-right: -1px;
+    height: 100%;
+}
+
+.content-container .detail-container .detail-inner-container .item-container {
+    border-right: 1px solid #f4f4f4;
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.content-container .detail-container .detail-inner-container .item-container:last-child {
+    width: 50%;
+}
+
+.content-container .detail-container .title {
+    height: 43px;
+    line-height: 43px;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 0 10px;
+}
+
+.content-container .detail-container .title span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.content-container .detail-container .title span.ads {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    padding: 2px 10px;
+}
+
+.content-container .detail-container .title a {
+    font-size: 12px;
+    color: #4095ce;
+}
+
+.content-container .detail-container .title b {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4095ce;
+    margin: 0 2px;
+}
+
+.content-container .detail-container .title a:hover {
+    text-decoration: underline;
+}
