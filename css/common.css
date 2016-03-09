@@ -732,14 +732,16 @@ a {
     box-sizing: border-box;
 }
 
-.content-container .detail-container .item-container .left-content a {
-    color: #5a5a5a;
-    display: block;
+.content-container .detail-container .item-container .left-content .link-container {
     margin: 14px 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 340px;
+}
+
+.content-container .detail-container .item-container .left-content a {
+    color: #5a5a5a;
 }
 
 .content-container .detail-container .item-container .left-content a:hover {
