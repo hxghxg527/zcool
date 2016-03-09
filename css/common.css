@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
+    font-size: 12px;
 }
 
 ul {
@@ -686,4 +687,30 @@ a {
 
 .content-container .detail-container .title a:hover {
     text-decoration: underline;
+}
+
+.content-container .detail-container .item-container .detail-item {
+    padding: 10px 10px;
+}
+
+.content-container .detail-container .item-container .detail-item .img-container img {
+    display: block;
+}
+
+.content-container .detail-container .item-container .detail-item .profile-container {
+    padding-left: 10px;
+    color: #999;
+}
+
+.content-container .detail-container .item-container .detail-item .profile-container .user-name {
+    color: #666;
+}
+
+.content-container .detail-container .item-container .detail-item .profile-container .user-name:hover {
+    color: #f30;
+    text-decoration: underline;
+}
+
+.content-container .detail-container .item-container .detail-item .profile-container .types {
+    margin: 7px 0;
 }
