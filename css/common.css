@@ -763,3 +763,13 @@ a {
     height: 106px;
     width: 166px;
 }
+
+.footer-ad-container {
+    width: 1083px;
+    margin: 25px auto;
+}
+
+.footer-ad-container img {
+    height: 90px;
+    width: 100%;
+}
