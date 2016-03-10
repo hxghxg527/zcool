@@ -5,7 +5,7 @@ html, body {
     font-size: 12px;
 }
 
-ul {
+ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -772,4 +772,99 @@ a {
 .footer-ad-container img {
     height: 90px;
     width: 100%;
+}
+
+.footer-container {
+    margin-bottom: 30px;
+}
+
+.footer-container .footer-search-container {
+    height: 46px;
+    width: 100%;
+    background: #ffba00;
+    display: table;
+}
+
+.footer-container .footer-search-container .footer-search-inner-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer-container .footer-search-container .menu-container {
+    width: 350px;
+    height: 32px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.footer-container .footer-search-container .menu-container .type-container {
+    width: 52px;
+    height: 100%;
+    line-height: 32px;
+    text-align: center;
+    border-right: 1px solid #eca128;
+    border-left: 1px solid #eca128;
+    padding-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.footer-container .footer-search-container .menu-container .type-container b {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #868686 transparent transparent;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.footer-container .footer-search-container .menu-container .type-container:hover .all-type {
+    display: block;
+}
+
+.footer-container .footer-search-container .menu-container .type-container .all-type {
+    position: absolute;
+    z-index: 100;
+    left: -1px;
+    top: 32px;
+    border: 1px solid #eca128;
+    border-top: none;
+    width: 100%;
+    background: #fff;
+    display: none;
+}
+
+.footer-container .footer-search-container .menu-container .type-container .all-type li {
+    height: 22px;
+    line-height: 22px;
+}
+
+.footer-container .footer-search-container .menu-container .type-container .all-type li:hover {
+    background: #ffba00;
+}
+
+.footer-container .footer-search-container .menu-container .search-container {
+    width: 286px;
+    height: 32px;
+}
+
+.footer-container .footer-search-container .menu-container .search-container input {
+    height: 32px;
+    line-height: 32px;
+    width: 250px;
+    margin: 0;
+    padding: 0 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.footer-container .footer-search-container .menu-container .search-container a {
+    width: 36px;
+    height: 32px;
+    background: url("../images/bs.png") no-repeat center 4px;
+}
+
+.footer-container .footer-search-container .menu-container .search-container a:hover {
+    background-position-y: -20px;
 }
