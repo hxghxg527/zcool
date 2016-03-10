@@ -899,3 +899,26 @@ a {
     color: #fff;
     text-decoration: underline;
 }
+
+.footer-container .footer-function-container .copyright-info-container {
+    color: #aaa;
+    width: 280px;
+}
+
+.footer-container .footer-function-container .copyright-info-container .item {
+    padding: 5px 0;
+    line-height: 21px;
+}
+
+.footer-container .footer-function-container .copyright-info-container a {
+    color: #aaa;
+}
+
+.footer-container .footer-function-container .copyright-info-container .title a {
+    color: #fff;
+}
+
+.footer-container .footer-function-container .copyright-info-container a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
