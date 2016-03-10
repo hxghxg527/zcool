@@ -775,7 +775,7 @@ a {
 }
 
 .footer-container {
-    margin-bottom: 30px;
+    background: #4e4e4e;
 }
 
 .footer-container .footer-search-container {
@@ -867,4 +867,35 @@ a {
 
 .footer-container .footer-search-container .menu-container .search-container a:hover {
     background-position-y: -20px;
+}
+
+.footer-container .footer-function-container {
+    width: 984px;
+    padding: 30px 0 25px;
+    margin: 0 auto;
+}
+
+.footer-container .footer-function-container ul {
+    width: 100px;
+}
+
+.footer-container .footer-function-container ul li {
+    padding: 5px 0;
+}
+
+.footer-container .footer-function-container ul li.title {
+    padding-top: 0;
+}
+
+.footer-container .footer-function-container ul li.title a {
+    color: #fff;
+}
+
+.footer-container .footer-function-container ul li a {
+    color: #aaa;
+}
+
+.footer-container .footer-function-container ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
