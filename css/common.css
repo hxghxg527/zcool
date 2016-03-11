@@ -819,10 +819,6 @@ a {
     margin-top: -2px;
 }
 
-.footer-container .footer-search-container .menu-container .type-container:hover .all-type {
-    display: block;
-}
-
 .footer-container .footer-search-container .menu-container .type-container .all-type {
     position: absolute;
     z-index: 100;
