@@ -922,3 +922,19 @@ a {
     color: #fff;
     text-decoration: underline;
 }
+
+.go-to-top {
+    width: 34px;
+    height: 100px;
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    display: none;
+}
+
+.go-to-top a {
+    display: block;
+    background: url("../images/goTopZcool.png") no-repeat center;
+    width: 100%;
+    height: 100%;
+}
