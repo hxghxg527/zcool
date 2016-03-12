@@ -300,8 +300,8 @@ a {
     left: 50%;
     bottom: 15px;
     display: none;
-    height: 15px;
     text-align: center;
+    height: 12px;
 }
 
 .content-container .carousel-container .indicator-container .indicator-inner-container {
@@ -309,10 +309,15 @@ a {
 }
 
 .content-container .carousel-container .indicator-container .indicator-item {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     background: rgba(0, 0, 0, .7);
     margin: 0 3px;
+    border-radius: 4px;
+}
+
+.content-container .carousel-container .indicator-container .indicator-item.active {
+    background: rgba(255, 186, 0, .85);
 }
 
 .content-container .carousel-container .carousel-item-container {
