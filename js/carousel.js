@@ -6,11 +6,15 @@
 function Carousel(options) {
     this.options = $.extend({}, this.options || {}, options);
     this.currentItemIndex = 0;
+
     this.indicatorContainer = $('.indicator-container');
     this.indicators = this.indicatorContainer.find('.indicator-item');
     this.carouselItemInnerContainer = $('.carousel-item-inner-container');
     this.carouselItems = this.carouselItemInnerContainer.find('.carousel-item');
+
     this.itemsNum = this.carouselItems.length;
+    this.timeout = null;
+    this.isHasIndicator = this.itemsNum == this.indicators.length;
 
     this.init();
 }
@@ -19,6 +23,7 @@ Carousel.prototype = {
     init: function () {
         this.setIndicatorPosition();
         this.configCarouselStyles();
+        this.autoPlayCarousel();
     },
     setIndicatorPosition: function () {
         this.indicatorContainer.css({
@@ -32,8 +37,43 @@ Carousel.prototype = {
         });
         this.carouselItemInnerContainer.css({
             width: 100 * this.itemsNum + '%',
-            left: '0%',
+            left: this.currentItemIndex + '%',
             display: 'block'
         });
+    },
+    autoPlayCarousel: function () {
+        var self = this;
+
+        this.clearCarouselTimeout();
+        this.timeout = setTimeout(function () {
+            self.executeLogicOfAutoPlayCarousel();
+        }, 4000);
+    },
+    executeLogicOfAutoPlayCarousel: function () {
+        var self = this;
+        this.clearCarouselTimeout();
+
+        if (this.isHasIndicator) {
+            this.indicators.eq(this.currentItemIndex).removeClass('active');
+        }
+
+        if (this.currentItemIndex == this.itemsNum - 1) this.currentItemIndex = 0;
+        else this.currentItemIndex++;
+
+        if (this.isHasIndicator) {
+            this.indicators.eq(this.currentItemIndex).addClass('active');
+        }
+
+        this.carouselItemInnerContainer.stop(true).animate({
+            left: -this.currentItemIndex * 100 + '%'
+        }, 'slow', function () {
+            self.autoPlayCarousel();
+        });
+    },
+    clearCarouselTimeout: function () {
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
     }
 };
