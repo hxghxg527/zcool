@@ -15,6 +15,8 @@ function Carousel(options) {
     this.itemsNum = this.carouselItems.length;
     this.timeout = null;
     this.isHasIndicator = this.itemsNum == this.indicators.length;
+    this.selectedIndicatorClassName = 'active';
+    this.itemSlideSpeed = 'slow';
 
     this.init();
 }
@@ -54,19 +56,19 @@ Carousel.prototype = {
         this.clearCarouselTimeout();
 
         if (this.isHasIndicator) {
-            this.indicators.eq(this.currentItemIndex).removeClass('active');
+            this.indicators.eq(this.currentItemIndex).removeClass(this.selectedIndicatorClassName);
         }
 
         if (this.currentItemIndex == this.itemsNum - 1) this.currentItemIndex = 0;
         else this.currentItemIndex++;
 
         if (this.isHasIndicator) {
-            this.indicators.eq(this.currentItemIndex).addClass('active');
+            this.indicators.eq(this.currentItemIndex).addClass(this.selectedIndicatorClassName);
         }
 
         this.carouselItemInnerContainer.stop(true).animate({
             left: -this.currentItemIndex * 100 + '%'
-        }, 'slow', function () {
+        }, this.itemSlideSpeed, function () {
             self.autoPlayCarousel();
         });
     },
