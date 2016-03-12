@@ -1,7 +1,7 @@
 /**
  * Created by hxghxg527 on 16/3/12.
  */
-
+'use strict';
 
 function Carousel(options) {
     this.options = $.extend({}, this.options || {}, options);
