@@ -17,7 +17,7 @@ function Carousel(options) {
     this.timeoutForHover = null;
     this.isHasIndicator = this.itemsNum == this.indicators.length;
     this.selectedIndicatorClassName = 'active';
-    this.itemSlideSpeed = 3000;
+    this.itemSlideSpeed = 'slow';
     this.isOverOnIndicator = false;
     this.isBlocked = false;
 
@@ -124,7 +124,9 @@ Carousel.prototype = {
             left: -this.currentItemIndex * 100 + '%'
         }, this.itemSlideSpeed, function () {
             if (self.isOverOnIndicator) self.isOverOnIndicator = false;
-            else self.autoPlayCarousel();
+            else if (!self.isBlocked && !self.timeout) {
+                self.autoPlayCarousel();
+            }
         });
     }
 };
