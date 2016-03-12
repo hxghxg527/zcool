@@ -99,6 +99,7 @@ Carousel.prototype = {
         var self = this;
         this.clearCarouselTimeout();
         this.clearHoverTimeout();
+        this.isOverOnIndicator = true;
         if (this.currentItemIndex == current_idx) {
             this.isOverOnIndicator = false;
             this.isBlocked = true;
