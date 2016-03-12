@@ -76,18 +76,6 @@ Carousel.prototype = {
             if (!self.isBlocked && !self.timeout) self.autoPlayCarousel();
         });
     },
-    clearCarouselTimeout: function () {
-        if (this.timeout) {
-            clearTimeout(this.timeout);
-            this.timeout = null;
-        }
-    },
-    clearHoverTimeout: function () {
-        if (this.timeoutForHover) {
-            clearTimeout(this.timeoutForHover);
-            this.timeoutForHover = null;
-        }
-    },
     addHoverEvent: function () {
         if (!this.isHasIndicator) return;
         var self = this;
@@ -124,9 +112,19 @@ Carousel.prototype = {
             left: -this.currentItemIndex * 100 + '%'
         }, this.itemSlideSpeed, function () {
             if (self.isOverOnIndicator) self.isOverOnIndicator = false;
-            else if (!self.isBlocked && !self.timeout) {
-                self.autoPlayCarousel();
-            }
+            else if (!self.isBlocked && !self.timeout) self.autoPlayCarousel();
         });
+    },
+    clearCarouselTimeout: function () {
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
+    },
+    clearHoverTimeout: function () {
+        if (this.timeoutForHover) {
+            clearTimeout(this.timeoutForHover);
+            this.timeoutForHover = null;
+        }
     }
 };
