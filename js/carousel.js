@@ -14,9 +14,12 @@ function Carousel(options) {
 
     this.itemsNum = this.carouselItems.length;
     this.timeout = null;
+    this.timeoutForHover = null;
     this.isHasIndicator = this.itemsNum == this.indicators.length;
     this.selectedIndicatorClassName = 'active';
-    this.itemSlideSpeed = 'slow';
+    this.itemSlideSpeed = 3000;
+    this.isOverOnIndicator = false;
+    this.isBlocked = false;
 
     this.init();
 }
@@ -26,6 +29,7 @@ Carousel.prototype = {
         this.setIndicatorPosition();
         this.configCarouselStyles();
         this.autoPlayCarousel();
+        this.addHoverEvent();
     },
     setIndicatorPosition: function () {
         this.indicatorContainer.css({
@@ -69,7 +73,7 @@ Carousel.prototype = {
         this.carouselItemInnerContainer.stop(true).animate({
             left: -this.currentItemIndex * 100 + '%'
         }, this.itemSlideSpeed, function () {
-            self.autoPlayCarousel();
+            if (!self.isBlocked && !self.timeout) self.autoPlayCarousel();
         });
     },
     clearCarouselTimeout: function () {
@@ -77,5 +81,50 @@ Carousel.prototype = {
             clearTimeout(this.timeout);
             this.timeout = null;
         }
+    },
+    clearHoverTimeout: function () {
+        if (this.timeoutForHover) {
+            clearTimeout(this.timeoutForHover);
+            this.timeoutForHover = null;
+        }
+    },
+    addHoverEvent: function () {
+        if (!this.isHasIndicator) return;
+        var self = this;
+        this.indicators.bind('mouseover', function () {
+            var current_idx = $(this).index();
+            self.isOverOnIndicator = true;
+            self.timeoutForHover = setTimeout(function () {
+                self.executeLogicForMouseOver(current_idx);
+            }, 100);
+        }).bind('mouseout', function () {
+            if (self.isOverOnIndicator) {
+                self.isOverOnIndicator = false;
+                self.clearHoverTimeout();
+            } else {
+                if (self.isBlocked) self.isBlocked = false;
+                self.autoPlayCarousel();
+            }
+        });
+    },
+    executeLogicForMouseOver: function (current_idx) {
+        var self = this;
+        this.clearCarouselTimeout();
+        this.clearHoverTimeout();
+        if (this.currentItemIndex == current_idx) {
+            this.isOverOnIndicator = false;
+            this.isBlocked = true;
+            return;
+        }
+        this.indicators.eq(this.currentItemIndex).removeClass(this.selectedIndicatorClassName);
+        this.currentItemIndex = current_idx;
+        this.indicators.eq(this.currentItemIndex).addClass(this.selectedIndicatorClassName);
+
+        this.carouselItemInnerContainer.stop(true).animate({
+            left: -this.currentItemIndex * 100 + '%'
+        }, this.itemSlideSpeed, function () {
+            if (self.isOverOnIndicator) self.isOverOnIndicator = false;
+            else self.autoPlayCarousel();
+        });
     }
 };
