@@ -295,6 +295,26 @@ a {
     right: -40px;
 }
 
+.content-container .carousel-container .indicator-container {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    display: none;
+    height: 15px;
+    text-align: center;
+}
+
+.content-container .carousel-container .indicator-container .indicator-inner-container {
+    display: inline-block;
+}
+
+.content-container .carousel-container .indicator-container .indicator-item {
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 0, 0, .7);
+    margin: 0 3px;
+}
+
 .content-container .carousel-container .carousel-item-container {
     background: url("../images/carousel/9e0a56dce903000001521ca743da.jpg") no-repeat center;
     height: 100%;
