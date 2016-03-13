@@ -12,6 +12,7 @@ function Carousel(options) {
     this.carouselItemInnerContainer = $('.carousel-item-inner-container');
     this.carouselItems = this.carouselItemInnerContainer.find('.carousel-item');
 
+    this.containerWidth = $('.carousel-item-container').width();
     this.itemsNum = this.carouselItems.length;
     this.timeout = null;
     this.timeoutForHover = null;
@@ -39,7 +40,7 @@ Carousel.prototype = {
     },
     configCarouselStyles: function () {
         this.carouselItems.css({
-            width: 100 / this.itemsNum + '%'
+            width: this.containerWidth
         });
         this.carouselItemInnerContainer.css({
             width: 100 * this.itemsNum + '%',
