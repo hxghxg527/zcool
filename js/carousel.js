@@ -154,7 +154,7 @@ Carousel.prototype = {
             this.indicators.eq(this.currentItemIndex).removeClass(this.selectedIndicatorClassName);
         }
 
-        if (direction == 'left') {
+        if (direction == 'right') {
             if (this.currentItemIndex == this.itemsNum - 1) this.currentItemIndex = 0;
             else this.currentItemIndex++;
         } else {
