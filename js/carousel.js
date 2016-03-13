@@ -11,6 +11,8 @@ function Carousel(options) {
     this.indicators = this.indicatorContainer.find('.indicator-item');
     this.carouselItemInnerContainer = $('.carousel-item-inner-container');
     this.carouselItems = this.carouselItemInnerContainer.find('.carousel-item');
+    this.slideLeftBtn = $('.slide_left');
+    this.slideRightBtn = $('.slide_right');
 
     this.containerWidth = $('.carousel-item-container').width();
     this.itemsNum = this.carouselItems.length;
@@ -31,6 +33,7 @@ Carousel.prototype = {
         this.configCarouselStyles();
         this.autoPlayCarousel();
         this.addHoverEvent();
+        this.addSlideBtnEvent();
     },
     setIndicatorPosition: function () {
         this.indicatorContainer.css({
@@ -128,5 +131,45 @@ Carousel.prototype = {
             clearTimeout(this.timeoutForHover);
             this.timeoutForHover = null;
         }
+    },
+    addSlideBtnEvent: function () {
+        var self = this;
+
+        if (this.slideRightBtn.length > 0) {
+            this.slideRightBtn.bind('click', function () {
+                self.executeLogicForSlideBtn('right');
+            });
+        }
+        if (this.slideLeftBtn.length > 0) {
+            this.slideLeftBtn.bind('click', function () {
+                self.executeLogicForSlideBtn('left');
+            });
+        }
+    },
+    executeLogicForSlideBtn: function (direction) {
+        var self = this;
+        this.clearCarouselTimeout();
+
+        if (this.isHasIndicator) {
+            this.indicators.eq(this.currentItemIndex).removeClass(this.selectedIndicatorClassName);
+        }
+
+        if (direction == 'left') {
+            if (this.currentItemIndex == this.itemsNum - 1) this.currentItemIndex = 0;
+            else this.currentItemIndex++;
+        } else {
+            if (this.currentItemIndex == 0) this.currentItemIndex = this.itemsNum - 1;
+            else this.currentItemIndex--;
+        }
+
+        if (this.isHasIndicator) {
+            this.indicators.eq(this.currentItemIndex).addClass(this.selectedIndicatorClassName);
+        }
+
+        this.carouselItemInnerContainer.stop(true).animate({
+            left: -this.currentItemIndex * 100 + '%'
+        }, this.itemSlideSpeed, function () {
+            if (!self.isBlocked && !self.timeout) self.autoPlayCarousel();
+        });
     }
 };
