@@ -4,11 +4,54 @@
 'use strict';
 
 function ContentScroll() {
+    this.itemInnerContainer = $('.news-container .item-inner-container');
+    this.containerHeight = $('.news-container .item-container').height();
+    this.itemsNum = this.itemInnerContainer.find('li').length;
+    this.timeout = null;
+    this.currentItemIndex = -1;
+
     this.init();
 }
 
 ContentScroll.prototype = {
     init: function () {
-
+        this.setStyle();
+        this.autoScroll();
+    },
+    setStyle: function () {
+        this.itemInnerContainer.css({
+            top: this.currentItemIndex * this.containerHeight,
+            display: 'block'
+        });
+    },
+    autoScroll: function () {
+        var self = this;
+        this.clearScrollTimeout();
+        setTimeout(function () {
+            self.executeScrollLogic();
+        }, 4000);
+    },
+    executeScrollLogic: function () {
+        var self = this;
+        this.clearScrollTimeout();
+        this.currentItemIndex--;
+        this.itemInnerContainer.stop(true).animate({
+            top: this.currentItemIndex * this.containerHeight
+        }, 'slow', function () {
+            if (self.currentItemIndex == 1 - self.itemsNum) {
+                console.log('reset');
+                self.currentItemIndex = -1;
+                $(this).css({
+                    top: self.currentItemIndex * self.containerHeight
+                });
+            }
+            self.autoScroll();
+        });
+    },
+    clearScrollTimeout: function () {
+        if (this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
     }
 };

@@ -384,6 +384,7 @@ a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: none;
 }
 
 .content-container .news-container ul li .has-color {
