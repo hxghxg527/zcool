@@ -360,7 +360,7 @@ a {
     margin-right: 6px;
 }
 
-.content-container .news-container span {
+.content-container .news-container span, .content-container .news-container ul {
     font-size: 14px;
 }
 
@@ -368,11 +368,29 @@ a {
     margin-right: 5px;
 }
 
-.content-container .news-container span .has-color {
+.content-container .news-container .item-container {
+    background: #ccc;
+    height: 46px;
+    width: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-container .news-container .item-inner-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-container .news-container ul li .has-color {
     color: #4095ce;
 }
 
-.content-container .news-container span .has-color:hover {
+.content-container .news-container ul li .has-color:hover {
     text-decoration: underline;
 }
 

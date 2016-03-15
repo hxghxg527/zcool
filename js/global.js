@@ -7,6 +7,7 @@ $(document).ready(function () {
     var goTop = new GoTop();
     addEventForFooterMenu();
     var carousel = new Carousel();
+    var contentScroll = new ContentScroll();
 });
 
 function addEventForFooterMenu() {
